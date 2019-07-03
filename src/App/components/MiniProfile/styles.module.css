@@ -1,0 +1,25 @@
+.photo {
+  text-align: center;
+  margin: 10px;
+}
+.name {
+  text-align: center;
+}
+.likes {
+  display: flex;
+  justify-content: center;
+}
+.general {
+  margin: 20px;
+  height: 250px;
+  width: 20%;
+  border-style: solid;
+  border-width: 5px;
+}
+.goPerfil {
+  text-align: center;
+  margin-right: 1px;
+}
+.heart {
+  margin-right: 10px;
+}

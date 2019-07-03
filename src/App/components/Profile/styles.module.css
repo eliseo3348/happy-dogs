@@ -1,11 +1,10 @@
-.photo{
-
+.photo {
 }
-.profile{
+.profile {
   width: 50%;
-   background-color: powderblue;
+  background-color: powderblue;
 }
-.general{
+.general {
   margin: 20px;
-  LINE-HEIGHT:25px
+  line-height: 25px;
 }

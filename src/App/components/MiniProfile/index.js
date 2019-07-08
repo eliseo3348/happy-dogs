@@ -14,15 +14,15 @@ export default function MiniProfile() {
       </div>
     );
   };
+
   const name = name => {
     return <div className={styles.name}>{name}</div>;
   };
+
   const photo = photo => {
     return (
-      <div>
-        <div className={styles.photo}>
-          <img src={photo} alt="W3Schools.com" />
-        </div>
+      <div className={styles.photo}>
+        <img src={photo} alt="W3Schools.com" />
       </div>
     );
   };
@@ -38,12 +38,12 @@ export default function MiniProfile() {
   const dogList = () => {
     return dogges.map(dog => {
       return (
-        <div>
-          <div className="col-xs-12 col-sm-6">
-            <div>{photo(dog.photo)}</div>
-            <div>{likes(dog.likes)}</div>
-            <div>{name(dog.name)}</div>
-            <div>{goPerfil()}</div>
+        <div className="col-xs-12 col-sm-4">
+          <div className={styles.general}>
+            {photo(dog.photo)}
+            {likes(dog.likes)}
+            {name(dog.name)}
+            {goPerfil()}
           </div>
         </div>
       );
@@ -51,8 +51,8 @@ export default function MiniProfile() {
   };
 
   return (
-    <div className={styles.general}>
-      <div>{dogList()}</div>
+    <div>
+      <div className="row">{dogList()}</div>
     </div>
   );
 }

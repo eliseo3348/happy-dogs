@@ -4,8 +4,8 @@ import MiniProfile from "App/components/MiniProfile";
 
 export default function Home() {
   return (
-    <div className={styles.mini}>
-      <div className="row">
+    <div>
+      <div className={styles.miniProfile}>
         <MiniProfile />
       </div>
     </div>

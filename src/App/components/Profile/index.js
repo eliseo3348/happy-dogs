@@ -17,6 +17,7 @@ export default function Profile() {
       </div>
     );
   };
+
   const info_person = () => {
     return (
       <div className={style.profile}>
@@ -28,6 +29,7 @@ export default function Profile() {
       </div>
     );
   };
+
   const calificacion = () => {
     return (
       <div className={style.calificacion}>
@@ -49,9 +51,7 @@ export default function Profile() {
   const send_mail = () => {
     return (
       <div className={style.send_mail}>
-        <div>
-          <button>Enviar!</button>
-        </div>
+        <button>Enviar!</button>
       </div>
     );
   };

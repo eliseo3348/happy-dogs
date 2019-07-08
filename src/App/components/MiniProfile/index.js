@@ -1,35 +1,32 @@
 import React from "react";
 import styles from "./styles.module.css";
-import divide from "lodash/divide";
 import { FaHeart } from "react-icons/fa";
+import dogges from "./info.js";
 
-export default function Profile() {
-  const likes = () => {
+export default function MiniProfile() {
+  const likes = like => {
     return (
-      <div>
-        <div className={styles.likes}>
-          <div className={styles.heart}>
-            <FaHeart />
-          </div>
-          <div>999</div>
+      <div className={styles.likes}>
+        <div className={styles.heart}>
+          <FaHeart />
         </div>
+        <div>{like}</div>
       </div>
     );
   };
-  const photo = () => {
+  const name = name => {
+    return <div className={styles.name}>{name}</div>;
+  };
+  const photo = photo => {
     return (
       <div>
         <div className={styles.photo}>
-          <img
-            src="https://www.w3schools.com/images/w3schools_green.jpg"
-            alt="W3Schools.com"
-          />
+          <img src={photo} alt="W3Schools.com" />
         </div>
-        <div>{likes()}</div>
-        <div className={styles.name}>FIDOMAN</div>
       </div>
     );
   };
+
   const goPerfil = () => {
     return (
       <div className={styles.goPerfil}>
@@ -37,10 +34,25 @@ export default function Profile() {
       </div>
     );
   };
+
+  const dogList = () => {
+    return dogges.map(dog => {
+      return (
+        <div>
+          <div className="col-xs-12 col-sm-6">
+            <div>{photo(dog.photo)}</div>
+            <div>{likes(dog.likes)}</div>
+            <div>{name(dog.name)}</div>
+            <div>{goPerfil()}</div>
+          </div>
+        </div>
+      );
+    });
+  };
+
   return (
     <div className={styles.general}>
-      <div>{photo()}</div>
-      <div>{goPerfil()}</div>
+      <div>{dogList()}</div>
     </div>
   );
 }

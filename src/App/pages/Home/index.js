@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./styles.module.css";
-import Profile2 from "App/components/Profile2";
+import Formulario from "App/components/Formulario";
 
 export default function Home() {
   return (
     <div className={styles.miniProfile}>
-      <Profile2 />
+      <Formulario />
     </div>
   );
 }

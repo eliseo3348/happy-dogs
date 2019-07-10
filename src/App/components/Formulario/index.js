@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 export default function Formulario() {
-  const [name, setName] = useState(" ");
-  const [lastName, setLastName] = useState(" ");
-  const [phone, setPhone] = useState(" ");
+  const [name, setName] = useState(undefined);
+  const [lastName, setLastName] = useState(undefined);
+  const [phone, setPhone] = useState(undefined);
   const [send, setSend] = useState([]);
 
   const handleChangeName = e => {
@@ -18,33 +18,33 @@ export default function Formulario() {
     setPhone(e.target.value);
   };
 
-  function modArray(namei, lastNamei, phonei) {
+  function modArray() {
     const elements = {
-      name: namei,
-      lastName: lastNamei,
-      phone: phonei
+      name,
+      lastName,
+      phone
     };
     const statecopy = send;
-    // console.log(elements);
     statecopy.push(elements);
-    // console.log(statecopy);
     setSend(statecopy);
-    //console.log(send);
+    setPhone("");
+    setName("");
+    setLastName("");
   }
 
   const showData = () => {
-    console.log({ send });
     return send.map((send2, index) => {
-      return <div key={index}>{showName(send2.name)}</div>;
+      return (
+        <div key={index}>
+          <div>Nombre: {send2.name}</div>
+          <div>Apellido: {send2.lastName}</div>
+          <div>Telefono: {send2.phone}</div>
+        </div>
+      );
     });
   };
 
-  const showName = name => {
-    //console.log(name);
-    return <div>{name}</div>;
-  };
-
-  const forms = forms => {
+  const forms = () => {
     return (
       <div className="row">
         <div className="col-xs-12 col-sm-6">
@@ -70,9 +70,7 @@ export default function Formulario() {
                 Telefono:
                 <input type="text" value={phone} onChange={handleChangePhone} />
               </label>
-              <button onClick={() => modArray(name, lastName, phone)}>
-                Guardar
-              </button>
+              <button onClick={() => modArray()}>Guardar</button>
             </div>
           </div>
         </div>
@@ -82,5 +80,6 @@ export default function Formulario() {
       </div>
     );
   };
+
   return <div>{forms()}</div>;
 }

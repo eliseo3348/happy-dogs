@@ -1,0 +1,50 @@
+.showTable {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+  th,
+  td {
+    padding: $table-cell-padding;
+    display: block;
+    margin: auto;
+    vertical-align: top;
+    border-top: 333px solid black;
+    text-align: center;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: (2 * $table-border-width) solid $table-border-color;
+  }
+
+  tbody + tbody {
+    border-top: (2 * $table-border-width) solid $table-border-color;
+  }
+}
+
+.tableBordered {
+  border: $table-border-width solid $table-border-color;
+
+  th,
+  td {
+    border: $table-border-width solid $table-border-color;
+  }
+
+  thead {
+    th,
+    td {
+      border-bottom-width: 2 * $table-border-width;
+    }
+  }
+}
+
+.element {
+  text-align: center;
+}

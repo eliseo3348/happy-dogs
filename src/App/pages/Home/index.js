@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./styles.module.css";
-import Formulario from "App/components/Formulario";
+import Tabla from "App/components/Tabla";
 
 export default function Home() {
   return (
     <div className={styles.miniProfile}>
-      <Formulario />
+      <Tabla />
     </div>
   );
 }
